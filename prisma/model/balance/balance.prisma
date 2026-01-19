@@ -1,0 +1,11 @@
+model Balance {
+    id            Int      @id @default(autoincrement())
+    // 是否允许余额为负,true不允许负数
+    checkBalance  Boolean  @default(true)
+    amount        Decimal
+    // 每次交易后的余额
+    endingBalance Decimal  @default(0)
+    userId        Int
+    user          User     @relation(fields: [userId], references: [id])
+    time          DateTime @default(now())
+}
