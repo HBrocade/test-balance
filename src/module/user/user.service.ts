@@ -10,10 +10,6 @@ export class UserService {
         private prisma: PrismaService
     ) { }
 
-    async test(): Promise<User[]> {
-        return this.prisma.user.findMany({})
-    }
-
     async add() {
         const now = new Date().getTime().toString()
         return this.prisma.user.create({

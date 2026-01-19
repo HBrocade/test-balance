@@ -6,10 +6,6 @@ export class UserController {
     constructor(
         private userService: UserService
     ) { }
-    @Get('')
-    async test() {
-        return this.userService.test()
-    }
 
     @Post()
     async post() {
